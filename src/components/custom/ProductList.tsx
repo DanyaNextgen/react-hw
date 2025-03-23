@@ -10,7 +10,7 @@ import { IoReload } from "react-icons/io5";
 const ProductList = () => {
   const { products, setSelectedProduct, fetchProducts, loading, search, setSearch } = useContext(ReloadCTX);
 
-  const filteredProducts = products.filter((product) =>
+  const filteredProducts = products.filter((product: any) =>
     product.title.toLowerCase().includes(search.toLowerCase())
   );
 
@@ -36,7 +36,7 @@ const ProductList = () => {
         </div>
       ) : (
         <div className="grid gap-4">
-          {filteredProducts.map((product) => (
+          {filteredProducts.map((product: any) => (
             <Card key={product.id} className="p-4 cursor-pointer hover:bg-gray-100" onClick={() => setSelectedProduct(product)}>
               <p className="font-semibold">{product.title}</p>
             </Card>
